@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko" class="mode-dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- 소셜태그 -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <!--// 소셜태그 -->
+
+  <title>HWI Studio</title>
+
+  <!-- 공통 css -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- (D) 폴리필/라이브러리는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+  <!-- 폴리필/라이브러리 스크립트 -->
+  <!-- <script src="../js/lib/lodash-4.17.21.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- 공통 선언 스크립트 -->
+  <!-- <script src="../js/app_common.js"></script> -->
+  <!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .hwi_page-content 하단에 넣어주세요. -->
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header>
+    <div class="pf_header-inner">
+      <h1><a href="javascript:;"><span>HWI Studio</span></a></h1>
+      <button type="button" class="btn-menu" title="메뉴"><i class="icon-menu"></i></button>
+      <nav>
+        <ul>
+          <li><a href="#pf_main-home" class="on"><span>HOME</span></a></li>
+          <li><a href="#pf_main-about"><span>ABOUT</span></a></li>
+          <li><a href="#pf_main-work"><span>WORK</span></a></li>
+          <!-- <li><a href="#pf_main-contact"><span>CONTACT</span></a></li> -->
+        </ul>
+      </nav>
+    </div>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="#pf_main-home" class="on"><span>HOME</span></a></li>
+        <li><a href="#pf_main-about"><span>ABOUT</span></a></li>
+        <li><a href="#pf_main-work"><span>WORK</span></a></li>
+        <!-- <li><a href="#pf_main-contact"><span>CONTACT</span></a></li> -->
+      </ul>
+      <button type="button" class="btn-close" title="닫기"><i class="icon-close"></i></button>
+    </nav>
+  </header>
+  <!--// 헤더 -->
+
+  <!-- 메인 -->
+  <main class="pf_main">
+    <div class="pf_cursor"><i></i></div>
+    <div class="pf_container">
+      <!-- Home -->
+      <section id="pf_main-home" class="pf_main-home">
+        <div class="pf_main-home-inner">
+          <div class="pf_main-home-title">
+            <h2 class="text-title"><span>EVERY PIXEL MATTERS</span></h2>
+            <p class="text-sub">Details matter. Performance matters. Users matter.</p>
+          </div>
+          <div class="pf_main-home-content">
+            <div class="motion-box type-circle">
+              <i class="ico_circle"></i>
+            </div>
+            <div class="motion-line"></div>
+            <div class="motion-text">
+              <p class="text-top">PUBLISHER</p>
+              <p class="text-bottom">FRONTEND DEVELOPER</p>
+              <p class="text-sub">기초를 탄탄히 다져온 퍼블리셔, 이제는 프론트엔드 개발자로 나아갑니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--// Home -->
+
+      <!-- about -->
+      <section id="pf_main-about" class="pf_main-about">
+        <div class="pf_main-about-inner">
+          <div class="pf_main-about-content">
+            <div class="pf_main-about-title">
+              <h2 class="text-title"><span>ABOUT</span></h2>
+              <p class="text-sub">From Publisher to Frontend Developer, Evolving Every Day</p>
+            </div>
+            <ul class="pf_main-about-list">
+              <!-- about me -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title"><span>ABOUT ME</span></h3>
+                  <div class="pf__about-me">
+                    <dl>
+                      <dt>UI 퍼블리싱</dt>
+                      <dd>웹 접근성(WCAG), 반응형 웹</dd>
+                      <dd>UI 스타일 가이드 기반 퍼블리싱</dd>
+                    </dl>
+                    <dl>
+                      <dt>컴포넌트 개발</dt>
+                      <dd>SCSS & JavaScript 기반 재사용 가능한 UI 컴포넌트 설계 및 모듈화</dd>
+                    </dl>
+                    <dl>
+                      <dt>프론트엔드 확장</dt>
+                      <dd>Vue.js & SPA 기반 UI 개발</dd>
+                      <dd>UI 성능 최적화 및 상태 관리 학습</dd>
+                    </dl>
+                  </div>
+                </div>
+              </li>
+              <!--// about me -->
+              <!-- skill -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title"><span>SKILL &#38; TOOL</span></h3>
+                  <div class="pf__about-skill">
+                    <ul>
+                      <li>
+                        <p><i class="icon-html"></i>HTML5</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-css"></i>CSS3</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-sass"></i>SASS/SCSS</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-js"></i>JAVASCRIPT</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-jquery"></i>JQUERY</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-vue"></i>VUE3</p>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li>
+                        <p><i class="icon-vscode"></i>VSCode</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-github"></i>GITHUB</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-figma"></i>FIGMA</p>
+                      </li>
+                      <li>
+                        <p><i class="icon-xd"></i>Adobe XD</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <!--// skill -->
+              <!-- work -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title">
+                    <span>WORK</span>
+                    <a href="javascript:;" class="btn-detail" data-modal-title="경력기술서" data-modal-src="_modal_career.html"><span>경력기술서 상세보기<i class="icon-link"></i></span></a>
+                  </h3>
+                  <ol class="pf__about-work">
+                    <li>
+                      <div class="pf__about-work-head">
+                        <h4 class="text-comp"><span>(주)휴먼컨설팅그룹</span></h4>
+                        <p class="text-period">2023.11.06 ~ <strong class="text-badge type-main">재직중</strong></p>
+                      </div>
+                      <div class="pf__about-work-body">
+                        <p class="text-info">퍼블리셔 → 프론트엔드 개발 | 대형 HR 시스템 UI 개발</p>
+                        <ul>
+                          <li>Vue.js 기반 대형 HR 시스템 UI 개발, 재사용 가능한 컴포넌트 설계</li>
+                          <li>SCSS 스타일 가이드 구축 및 UI 구조 표준화로 일관성 강화<br>(UI 유지보수성 30% 증가)</li>
+                          <li>Figma 기반 UI 협업을 통한 디자인 시스템 정리</li>
+                          <li>반응형 웹 최적화 & 사용자 경험 개선, 다양한 디바이스 환경 대응</li>
+                        </ul>
+                        <dl>
+                          <dt>Skill Keywords</dt>
+                          <dd><i class="icon-html" title="HTML5"></i></dd>
+                          <dd><i class="icon-sass" title="SCSS"></i></dd>
+                          <dd><i class="icon-js" title="JavaScript(ES6+)"></i></dd>
+                          <dd><i class="icon-vue" title="Vue.js"></i></dd>
+                          <dd><i class="icon-figma" title="Figma"></i></dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="pf__about-work-head">
+                        <h4 class="text-comp"><span>(주)엠몬스타</span></h4>
+                        <p class="text-period">2018.07.02 ~ 2023.01.06 <strong class="text-badge type-main">총 4년 6개월</strong></p>
+                      </div>
+                      <div class="pf__about-work-body">
+                        <p class="text-info">퍼블리싱 리드 | 이커머스 쇼핑몰, Admin & SCM 시스템 UI 개발</p>
+                        <ul>
+                          <li>이커머스 쇼핑몰 퍼블리싱 리드, 반응형 웹 및 UI 최적화 수행</li>
+                          <li>Admin & SCM(공급망 관리) 시스템 UI 개발 & 유지보수</li>
+                          <li>SCSS 기반 UI 컴포넌트 개발을 통해 유지보수 효율성 50% 향상</li>
+                          <li>Git Flow 전략 적용 & 코드 리뷰 프로세스 도입으로 협업 개선</li>
+                        </ul>
+                        <dl>
+                          <dt>Skill Keywords</dt>
+                          <dd><i class="icon-html" title="HTML5"></i></dd>
+                          <dd><i class="icon-sass" title="SCSS"></i></dd>
+                          <dd><i class="icon-js" title="JavaScript(ES6+)"></i></dd>
+                          <dd><i class="icon-jquery" title="jQuery"></i></dd>
+                          <dd><i class="icon-xd" title="AdobeXD"></i></dd>
+                        </dl>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <!--// work -->
+              <!-- projects -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title"><span>Projects</span></h3>
+                  <ul class="pf__about-project">
+                    <li><p><i class="logo-sk" title="SK바이오사이언스"></i></p></li>
+                    <li><p><i class="logo-gs" title="‘GS칼텍스’"></i></p></li>
+                    <li><p><i class="logo-nstation" title="엔스테이션몰"></i></p></li>
+                    <li><p><i class="logo-hago" title="HAGO"></i></p></li>
+                    <li><p><i class="logo-fp" title="패션플러스"></i></p></li>
+                    <li><p><i class="logo-moda" title="모다아울렛"></i></p></li>
+                  </ul>
+                </div>
+              </li>
+              <!--// projects -->
+              <!-- Development Philosophy -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title"><span>Development Philosophy</span></h3>
+                  <div class="pf__about-dev">
+                    <p class="text-info">🚀 사용자를 위한 코드, 팀을 위한 구조</p>
+                    <p>
+                      UI 개발은 단순한 디자인 구현이 아니라, <br>
+                      <strong>사용자 경험을 향상시키는 과정</strong>이라고 생각합니다.<br>
+                      저는 <strong>재사용 가능한 컴포넌트 설계</strong>를 통해 유지보수성을 높이고,
+                      <strong>웹 접근성(WCAG) 준수</strong>를 통해 누구나 쉽게 이용할 수 있는 UI를 만듭니다.<br>
+                      또한, 협업을 위한 코드 스타일링과 문서화를 통해<br>
+                      <strong>팀워크를 강화</strong>하는 개발자로 성장하고 있습니다.<br>
+                    </p>
+                    <ul class="pf__about-dev-tag">
+                      <li class="text-badge type-main">#성능최적화</li>
+                      <li class="text-badge type-main">#사용자경험</li>
+                      <li class="text-badge type-main">#재사용컴포넌트</li>
+                      <li class="text-badge type-main">#협업강화</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <!--// Development Philosophy -->
+              <!-- growth -->
+              <li class="pf__about-item">
+                <div class="pf__about-item-inner">
+                  <h3 class="text-title"><span>Tech Stack Growth</span></h3>
+                  <div class="pf__about-growth">
+                    <p class="text-info">🚀 퍼블리셔에서 프론트엔드 개발자로 성장하는 과정</p>
+                    <dl>
+                      <dt class="text-badge type-main">과거 (퍼블리셔 시절)</dt>
+                      <dd>HTML, CSS, SCSS JavaScript(ES6+)</dd>
+                      <dd>웹 접근성(WCAG), 반응형 웹</dd>
+                      <dd>이커머스 & Admin UI 개발</dd>
+                    </dl>
+                    <dl>
+                      <dt class="text-badge type-main">현재 (프론트엔드 성장 중)</dt>
+                      <dd>JavaScript(ES6+), Vue.js</dd>
+                      <dd>UI 컴포넌트 설계 & 유지보수성 향상</dd>
+                      <dd>SPA 구조 이해 및 성능 최적화</dd>
+                    </dl>
+                    <dl>
+                      <dt class="text-badge type-main">미래 (앞으로의 목표)</dt>
+                      <dd>TypeScript & React 활용 능력 강화</dd>
+                      <dd>웹 성능 최적화 (Lighthouse, Core Web Vitals)</dd>
+                      <!-- - 디자인 시스템 & 스토리북 도입 경험 확대 -->
+                    </dl>
+                  </div>
+                </div>
+              </li>
+              <!--// growth -->
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--// about -->
+
+      <!-- Work -->
+      <section id="pf_main-work" class="pf_main-work">
+        <div class="pf_main-work-title">
+          <h2 class="text-title"><span>WORK</span></h2>
+        </div>
+        <div class="pf_main-work-inner">
+          <div class="pf_main-work-info">
+            <h3 class="pf__info-title"><span class="text-title">WORK</span></h3>
+            <ul class="text-comp">
+              <li><span>개인 스터디</span></li>
+              <li><span>휴먼컨설팅그룹</span></li>
+              <li><span>엠몬스타</span></li>
+            </ul>
+          </div>
+
+          <!-- 우측 작업 리스트 -->
+          <div class="pf_main-work-list">
+            <ul>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-memo">
+                    <i class="image-work" title="Memo_메모장"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">Memo_메모장</p>
+                      <p class="text-period">Vue.js를 활용한 개인 프로젝트입니다.</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Publisher 1인</span></p>
+                      <span class="text-badge">기여도 100%</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="Memo_메모장" data-modal-src="_modal_work-memo.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-sk">
+                    <i class="image-work" title="SK바이오사이언스 HR 서비스 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">‘SK바이오사이언스’ HR 서비스</p>
+                      <p class="text-period">2024.07 ~ 2024.09</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Publisher 1인</span></p>
+                      <span class="text-badge">기여도 100%</span>
+                      <span class="text-badge">약 2개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="‘SK바이오사이언스’ HR 서비스" data-modal-src="_modal_work-sk.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-gs">
+                    <i class="image-work" title="'GS칼텍스’ 통합 HR 플랫폼 개발 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">'GS칼텍스’ 통합 HR 플랫폼 개발 <span>HR 서비스, 모바일웹, 채용사이트 개발</span></p>
+                      <p class="text-period">2024.02 ~ 2024.08</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Publisher 1인</span></p>
+                      <span class="text-badge">기여도 100%</span>
+                      <span class="text-badge">약 5개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="'GS칼텍스’ 통합 HR 플랫폼 개발" data-modal-src="_modal_work-gs.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-mmon">
+                    <i class="image-work" title="‘엠몬 솔루션’ 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">‘엠몬 솔루션’ 신규 구축 (회사 자체 솔루션) <span>대형 SI 기반으로 설계된 기업을 위한 전문 솔루션</span></p>
+                      <p class="text-period">2022.02 ~ 2023.01</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Project Leader</span></p>
+                      <span class="text-badge">기여도 80%</span>
+                      <span class="text-badge">약 11개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="‘엠몬 솔루션’ 신규 구축 (회사 자체 솔루션)" data-modal-src="_modal_work-mmon.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-nstation">
+                    <i class="image-work" title="내셔널지오그래픽 온라인몰 리뉴얼 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">내셔널지오그래픽 온라인몰 리뉴얼<span>N.Station 쇼핑몰 (엔스테이션몰)</span></p>
+                      <p class="text-period">2021.08 ~2021.12</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Project Leader</span></p>
+                      <span class="text-badge">기여도 80%</span>
+                      <span class="text-badge">약 5개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="내셔널지오그래픽 온라인몰 리뉴얼" data-modal-src="_modal_work-nstation.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-hago">
+                    <i class="image-work" title="HAGO 쇼핑몰 리뉴얼 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">HAGO 쇼핑몰 리뉴얼<span>라이징 패션 플랫폼. 2,500개 이상 디자이너 브랜드 입점</span></p>
+                      <p class="text-period">2021.05 ~ 2021.08</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Project Leader</span></p>
+                      <span class="text-badge">기여도 80%</span>
+                      <span class="text-badge">약 4개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="HAGO 쇼핑몰 리뉴얼" data-modal-src="_modal_work-hago.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-pf">
+                    <i class="image-work" title="패션플러스 2021 리뉴얼 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">패션플러스 2021 리뉴얼<span>대형 온라인 패션 플랫폼, 2022년 연 매출 3,000억 → 5,000억 달성</span></p>
+                      <p class="text-period">2020.09 ~ 2021.01</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Project Leader</span></p>
+                      <span class="text-badge">기여도 80%</span>
+                      <span class="text-badge">약 9개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="패션플러스 2021 리뉴얼" data-modal-src="_modal_work-pf.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-crew">
+                    <i class="image-work" title="스타일크루 종합쇼핑몰 신규 구축 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">스타일크루 종합쇼핑몰 신규 구축<span>온라인 쇼핑몰 (23.02.28 서비스 종료)</span></p>
+                      <p class="text-period">2020.04 ~ 2020.12</p>
+                    </div>
+                    <div class="info-body">
+                      <p class="text-role"><span>Project Leader</span></p>
+                      <span class="text-badge">기여도 80%</span>
+                      <span class="text-badge">약 9개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="스타일크루 종합쇼핑몰 신규 구축" data-modal-src="_modal_work-crew.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-pfscm">
+                    <i class="image-work" title="패션플러스 SCM 관리자 구축 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">패션플러스 SCM 관리자 구축<span>판매/관리 및 배송/CS 업무 솔루션</span></p>
+                      <p class="text-period">2020.02 ~ 2020.03</p>
+                    </div>
+                    <div class="info-body">
+                      <span class="text-badge">기여도 30%</span>
+                      <span class="text-badge">약 2개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="패션플러스 SCM 관리자 구축" data-modal-src="_modal_work-pfscm.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-moda">
+                    <i class="image-work" title="모다아울렛몰 신규 구축 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">모다아울렛몰 신규 구축</p>
+                      <p class="text-period">2019.06 ~ 2019.12</p>
+                    </div>
+                    <div class="info-body">
+                      <span class="text-badge">기여도 30%</span>
+                      <span class="text-badge">약 7개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="모다아울렛몰 신규 구축" data-modal-src="_modal_work-moda.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-enter">
+                    <i class="image-work" title="엔터식스몰 리뉴얼 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">엔터식스몰 리뉴얼</p>
+                      <p class="text-period">2018.09 ~ 2019.06</p>
+                    </div>
+                    <div class="info-body">
+                      <span class="text-badge">기여도 40%</span>
+                      <span class="text-badge">약 10개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="엔터식스몰 리뉴얼" data-modal-src="_modal_work-enter.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb type-pfmo">
+                    <i class="image-work" title="패션플러스 모바일 SCM 구축 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">패션플러스 모바일 SCM 구축<span>매장 상품을 바로 촬영하여 등록 후 판매하고 관리하는 모바일 솔루션</span></p>
+                      <p class="text-period">2018.07 ~ 2018.10</p>
+                    </div>
+                    <div class="info-body">
+                      <span class="text-badge">기여도 15%</span>
+                      <span class="text-badge">약 3개월</span>
+                    </div>
+                  </div>
+                  <a class="btn-detail" data-modal-title="패션플러스 모바일 SCM 구축" data-modal-src="_modal_work-pfmo.html"><span>More View</span><i class="icon-link"></i></a>
+                </div>
+              </li>
+              <li>
+                <div class="pf__work-detail">
+                  <div class="pf__work-detail-thumb">
+                    <i class="image-work" title="다이소, 코웰패션 유지보수 썸네일"></i>
+                  </div>
+                  <div class="pf__work-detail-info">
+                    <div class="info-head">
+                      <p class="text-work">다이소, 코웰패션 유지보수</p>
+                      <p class="text-period">2018.07 ~ 2018.10</p>
+                    </div>
+                    <div class="info-body">
+                      <span class="text-badge">약 3개월</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--// 우측 작업 리스트 -->
+        </div>
+      </section>
+      <!--// Work -->
+
+      <!-- Contact -->
+      <!-- <section id="pf_main-contact" class="pf_main-contact">
+        <h2 class="text-title"><span>CONTACT</span></h2>
+      </section> -->
+      <!--// Contact -->
+    </div>
+  </main>
+  <!--// 메인 -->
+
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/header.js"></script>
+  <script src="../js/modal.js"></script>
+</body>
+
+</html>

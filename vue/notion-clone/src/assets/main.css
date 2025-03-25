@@ -1,0 +1,71 @@
+/**
+ * 공통
+ * main
+**/
+
+:root {
+  --color-bg: #F1F0EE;
+  --color-text: #34383a;
+  --color-white: #fff;
+
+  --color-main: #7ba1ec;
+  --color-main-lighter: #f3f9ff;
+  --color-main-light: #d1dbf6;
+  --color-main-dark: #416eb4;
+
+  height: 100%;
+  font-size: 62.5%;
+  line-height: 1.285;
+}
+
+body {
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-family: 'PretendardVariable', sans-serif;
+  background-color: var(--color-bg);
+}
+
+/* 다크모드 */
+.dark {
+  --color-bg: #2b2b2b;
+  --color-text: #f5f5f5;
+
+  --color-main-lighter: #606162;
+  --color-main-light: #9aa5c2;
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 128rem;
+  height: 100vh;
+  font-weight: normal;
+  background-color: var(--color-bg);
+}
+
+/* a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+} */
+
+/* @media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */

@@ -1,0 +1,125 @@
+@charset 'utf-8';
+
+/**
+ * 셋팅
+ * 전역변수
+ * color: primary, secondary, tertiary, positive, negative, background, line, text, icon, tag...
+ * font-size: body, button, tag
+**/
+
+
+//< 컬러
+// base
+$color_white: #fff;
+$color_black: #000;
+$color_grey_lighter: #e7e7e7;
+$color_grey_light: #cdcdcd;
+$color_grey: #34383a;
+
+// 포인트
+$color_main: #14ffa5;
+$color_main_dark: #3ed89B;
+$color_sub: #1d969c;
+$color_sub_dark: #061424;
+$color_red: #ea2222;
+
+$border_color: rgba($color_white, .2);
+$color_bg: #f2f3f7;
+
+// $color_variable: var(--color_variable); // 유색 버전은 var(--color_main), 블랙 버전은 var(--color_sub)
+// $color_support: var(--color_support); // 유색 버전은 #ff8800, 블랙 버전은 #4457a7
+
+// 상태(긍정/부정)
+// $color_negative_base: #ee4f10;
+// $color_positive_base: $color_tertiary_base;//$color_main;
+//> 컬러
+
+//< 반응형
+$breakpoints: (
+  'mobile': 479px,
+  'tablet': 767px,
+  'tablet-lg': 1023px,
+  'desktop': 1279px,
+  'desktop-lg': 1280px
+);
+//> 반응형
+
+//< 최소사이즈
+// $minWidth_base: 1360px;// mobile 320px
+$minWidth_base: 1520px;
+// $minWidth_extend: $minWidth_base + (106 * 2);// pc 좌/우 날개배너 확장
+//> 최소사이즈
+
+//< 레이아웃
+// 단계: min, base, extend
+
+// header
+$header_height_base: 8rem;
+// $header_height_sm: var(--header_height_sm);
+// $color_header: var(--color_header);
+
+// footer
+// $footer_height_base: var(--footer_height_base);
+
+// grid
+
+// sidebar
+// $sidebar_content_base: 56px;
+// $sidebar_content_sm: 44px;
+
+// popup
+
+// modal
+// $modal_header_height_base: 51px;
+// $modal_width_base: 500px;
+// $modal_width_sm: 412px;
+// $modal_width_lg: 700px;
+// $modal_width_xl: 920px;
+
+// skeleton
+// $skeleton_color_base: #eee;
+
+// bom
+//> 레이아웃
+
+//< 폼
+// 단계: sm, base, lg
+
+// 기본 형태
+
+// $form_borderRadius_base: 3px;
+// $form_color_base: #101010;
+// $form_color_negative: #ff4800;
+// $form_fontSize_base: 1.4rem;
+// $form_fontSize_lg: 15px;
+// $form_clear_base: 44px;
+
+// 텍스트 인풋
+// $form_text_height_base: 46px;
+// $form_text_height_lg: 50px;
+// $form_textarea_lineheight: ($form_fontSize_base + 0.8rem);// 계산식에 사용되어 괄호필요
+
+// 체크박스
+// $form_check_height_base: 20px;
+// $form_check_fontSize_base: 1.4rem;
+
+// 라디오
+// $form_radio_height_base: 20px;
+// $form_radio_fontSize_base: 1.4rem;
+
+// 셀렉트
+// $form_select_height_base: 46px;
+// $form_select_height_sm: 32px;
+// $form_select_fontSize_base: 1.4rem;
+// $form_select_fontSize_sm: 14px;
+
+// 파일
+// $form_file_clear: $form_text_height_base - 6px;
+
+// 이미지
+// $form_image_clear: 22px;
+//> 폼
+
+//< 페이지네이션
+// $pagination_height_base: 25px;
+//> 페이지네이션

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+// @use '../../common/setting/const';
+@use '../../style/setting/var';
+
+
+//< contact
+// .pf_main-contact {
+//   padding: 15rem 3rem 0;
+//   margin: 0 auto;
+//   max-width: var.$minWidth_base;
+//   height: 500px;
+// }
+//> contact

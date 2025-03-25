@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+@use '../../common/setting/const';
+@use '../../style/setting/var';
+
+//< 뱃지
+.text-badge {
+  display: inline-block;
+  padding: .3rem 1rem .2rem;
+  border-radius: .4rem;
+  @include mixin.font(var.$color_sub '1.2rem' center);
+  background-color: rgba(var.$color_sub, .2);
+
+  $types: ('grey', rgba(var.$color_grey, .5), var.$color_grey_lighter), ('red', var.$color_red, rgba(var.$color_red, .2)),
+  ('main', var.$color_main, var.$color_sub_dark);
+  @each $type, $color, $bg in $types {
+    &.type-#{$type} {
+      color: $color;
+      background-color: $bg;
+    }
+  }
+}
+//> 뱃지

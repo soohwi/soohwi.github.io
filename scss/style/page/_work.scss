@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+@use '../../common/setting/const';
+@use '../../style/setting/var';
+
+
+//< work
+.pf_main-work {
+  margin: 0 auto;
+  padding: 0 3rem;
+  max-width: var.$minWidth_base;
+  height: auto;
+  @include mixin.respond('tablet') {
+    padding: 0 1.5rem;
+  }
+
+  // 타이틀
+  &-title {
+    position: relative;
+    height: 100vh;
+
+    .text-title {
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      bottom: -32.8%;
+      left: 0;
+      font-size: 7rem;
+      font-weight: 600;
+      letter-spacing: -.24rem;
+      @include mixin.opacity(1);
+    }
+  }
+
+  &-inner {
+    display: flex;
+    gap: 3rem;
+
+    @include mixin.respond('tablet') {
+      display: block;
+    }
+  }
+
+  // 좌측 work 정보
+  &-info {
+    position: sticky;
+    top: 0;
+    flex: 0 0 27%;
+    align-self: flex-start;
+    padding-top: 15rem;
+    white-space: nowrap;
+
+    @include mixin.respond('tablet') {
+      z-index: 1;
+      height: auto;
+      background-color: var.$color_black;
+    }
+
+    // work 세부 타이틀
+    .pf__info-title {
+      display: flex;
+      align-items: center;
+      gap: 0 2rem;
+    }
+
+    .text-comp {
+      @include mixin.respond('tablet') {
+        display: flex;
+      }
+
+      li {
+        margin-bottom: 1.5rem;
+
+        span {
+          padding: .4rem 2rem;
+          @include mixin.font(var.$color_main_dark 700 '2rem/1.4');
+          border-radius: 2rem;
+          background-color: var.$color_sub_dark;
+          filter: grayscale(1);
+          @include mixin.respond('tablet') {
+            font-size: 1.6rem;
+          }
+        }
+
+        &.on {
+          span {
+            filter: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  // work 리스트
+  &-list {
+    flex: 1;
+    padding: 15rem 0 7rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+
+      @include mixin.respond('tablet') {
+        gap: 1.5rem;
+      }
+
+      @include mixin.respond('mobile') {
+        display: block;
+      }
+
+      li {
+        overflow: hidden;
+        position: relative;
+        width: calc((100% - 3rem) / 2);
+        height: 50rem;
+        border-radius: 1.2rem;
+        border: .1rem solid var.$border_color;
+        background-color: var.$color_black;
+
+        &:nth-child(even) {
+          top: 7rem;
+        }
+
+        @include mixin.respond('mobile') {
+          margin-top: 1rem;
+          width: 100%;
+
+          &:nth-child(even) {
+            top: 0;
+          }
+        }
+
+        .pf__work-detail {
+          position: relative;
+          height: 100%;
+
+          &-thumb {
+            height: 50%;
+
+            $works: (sk, #ffefe3), (gs, #D9EBEE), (mmon, #D6D8DA), (nstation, #D2D2D2), (hago, #CBD6D9),
+              (pf, #FCF2F3), (crew, #3C3C3C), (pfscm, #ADAEB5), (moda, #FCE1E6), (enter, #E1DCD8), (pfmo, #B5B7BE);
+            @each $work, $bg in $works {
+              &.type-#{$work} {
+                background-color: $bg;
+
+                .image-work {
+                  display: block;
+                  height: 100%;
+                  @include mixin.background(url("../image/project/work_thumb-#{$work}.png") 'center/contain' no-repeat);
+                }
+              }
+            }
+          }
+
+          &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3rem 2rem;
+            height: 50%;
+
+            .text-work {
+              @include mixin.font(700 '2rem');
+
+              span {
+                display: block;
+                padding-top: .4rem;
+                @include mixin.font(#8f8c8c 400 italic '1.4rem');
+              }
+            }
+
+            .text-period {
+              padding-top: .5rem;
+              color: var.$color_grey_light;
+            }
+
+            .text-role {
+              padding-bottom: 1rem;
+
+              span {
+                border-bottom: .1rem solid var.$color_white;
+              }
+            }
+          }
+
+          .btn-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 2rem;
+            background-color: rgba(var.$color_black, 0.1);
+            backdrop-filter: blur(10px);
+            @include mixin.transition(opacity .4s ease-out);
+            @include mixin.opacity(0);
+            cursor: pointer;
+
+            &::before {
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              bottom: 1rem;
+              left: 1rem;
+              border: .1rem solid var.$color_white;
+              border-radius: 1.2rem;
+              content: '';
+            }
+          }
+
+          &:hover {
+            .btn-detail {
+              @include mixin.opacity(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//> work

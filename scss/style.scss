@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+@use 'style/setting/var';
+@use 'common/helper/mixin';
+
+/**
+ * 모듈 forward
+ * font-face
+**/
+
+
+//< 모듈 forward
+// 컴포넌트
+@forward 'style/component/title';
+@forward 'style/component/part';
+
+// 헬퍼
+// @forward 'style/helper/';
+
+// 레이아웃
+@forward 'style/layout/header';
+@forward 'style/layout/modal';
+
+// 페이지
+@forward 'style/page/main';
+@forward 'style/page/home';
+@forward 'style/page/about';
+@forward 'style/page/work';
+
+// 셋팅
+@forward 'style/setting/var';
+@forward 'style/setting/icon';
+//> 모듈 forward

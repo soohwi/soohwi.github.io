@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+// @use '../../common/setting/const';
+@use '../../style/setting/var';
+
+
+// 공통
+.pf_container {
+  font-size: 1.4rem;
+  scroll-behavior: smooth;
+
+  section {
+    position: relative;
+    color: var.$color_white;
+  }
+
+  .text-title {
+    font-size: 7rem;
+  }
+
+  .text-sub {
+    padding-top: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  // 언어 아이콘
+  $skills: 'html', 'css', 'sass', 'js', 'jquery', 'vue', 'vscode', 'github', 'figma', 'xd';
+  @each $icon in $skills {
+    .icon-#{$icon} {
+      position: relative;
+      width: 1.8rem;
+      height: 4rem;
+      @include mixin.background(url("../image/icon/icon_it_#{$icon}.png") 'center 1rem/contain' no-repeat);
+    }
+  }
+
+  // 프로젝트 로고
+  $logos: ('sk', 'png', null, 5), ('gs', 'png', null, 4), ('nstation', 'svg', null,  3),
+  ('hago', 'svg', 10, 2), ('fp', 'png', 11), ('moda', 'png', 11);
+  @each $project, $img, $width, $height in $logos {
+    .logo-#{$project} {
+      display: block;
+      width: if($width, #{$width}rem, 12rem);
+      height: if($height, #{$height}rem, 2.5rem);
+      @include mixin.background(url("../image/logo/logo_#{$project}.#{$img}") '/contain' no-repeat);
+    }
+  }
+}

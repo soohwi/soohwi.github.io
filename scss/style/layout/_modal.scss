@@ -1,0 +1,483 @@
+@charset 'utf-8';
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+@use '../../common/setting/const';
+@use '../../style/setting/var';
+
+
+//< 모달
+.pf_modal {
+  position: fixed;
+  z-index: const.$zIndex_modal;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // @include mixin.transform(scale(0));
+  @include mixin.transition(opacity .5s);
+  @include mixin.opacity(0);
+
+  &-dim {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, 0.7);
+  }
+
+  &-container {
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 75%;
+      height: 90%;
+      color: var.$color_black;
+      border-radius: 1rem;
+      background-color: var.$color_white;
+      @include mixin.transform(translate(-50%, -50%));
+
+      @include mixin.respond('tablet-lg') {
+        width: 95%;
+      }
+
+      @include mixin.respond('desktop') {
+        width: 90%;
+      }
+
+      .pf_modal-header {
+          position: relative;
+          margin: 0 3rem;
+          padding: 2rem 0 1.5rem;
+          // border-bottom: .1rem solid var.$color_grey_lighter;
+          @include mixin.respond('tablet-lg') {
+            margin: 0 1.5rem;
+          }
+
+          h3 {
+            @include mixin.font(700 '2rem');
+          }
+
+          .btn-close {
+              position: absolute;
+              top: 0;
+              right: 0;
+              padding: 2rem 1.5rem;
+          }
+      }
+
+      .pf_modal-body {
+        overflow: auto;
+        height: calc(100% - 6.6rem);// 100% - header 높이
+          &-inner {
+              padding: 0 3rem;
+              max-height: 100%;
+              @include mixin.font('1.4rem/1.4');
+              @include mixin.respond('tablet-lg') {
+                padding: 0 1.5rem;
+              }
+          }
+      }
+  }
+
+  &.modal-on {
+      // @include mixin.transform(scale(1));
+      @include mixin.opacity(1);
+  }
+}
+//> 모달
+
+//< 경력기술서
+.pf_modal-works {
+  // 총 경력
+  .pf__works-career {
+    display: flex;
+    align-items: center;
+    gap: 0 4rem;
+    padding: 2rem;
+    border-radius: .4rem;
+    background-color: var.$color_bg;
+    &-img {
+      i {
+        width: 6.8rem;
+        height: 6.8rem;
+        @include mixin.font('6rem' center);
+        border-radius: 100%;
+        background-color: #c9cde0;
+      }
+    }
+
+    &-info {
+      flex: 1;
+
+      .text-career {
+        @include mixin.font(700 '1.6rem');
+      }
+
+      ul {
+        margin-top: .5rem;
+
+        li {
+          display: flex;
+          gap: 0 1.6rem;
+          &:not(:first-child) {
+            margin-top: .4rem;
+          }
+
+          .text-badge {
+            min-width: 7.4rem;
+            color: #606da8;
+            border-radius: 2rem;
+            background-color: #c9cde0;
+          }
+
+          .text-comp {
+            flex: 0 0 11rem;
+          }
+        }
+      }
+    }
+  }
+
+  // 프로젝트 리스트
+  .pf__works-body {
+    padding-bottom: 4rem;
+
+    .pf__works-list {
+      margin-top: 4rem;
+      &:not(:first-of-type) {
+        padding-top: 4rem;
+        border-top: .1rem solid var.$color_grey_lighter;
+      }
+
+      .pf_sub-title {
+        padding-bottom: 2rem;
+      }
+
+      > ol {
+        > li {
+          display: flex;
+          gap: 0 2rem;
+          &:not(:first-child) {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: .1rem dashed var.$color_grey_light;
+          }
+
+          .pf__works-info {
+            flex: 0 0 25rem;
+
+            .text-period {
+              margin-bottom: 1rem;
+              @include mixin.font(var.$color_grey 700 '1.6rem');
+            }
+
+            .text-role {
+              margin-bottom: .5rem;
+              span {
+                color: #8f8c8c;
+                border-bottom: .1rem solid #8f8c8c;
+              }
+            }
+          }
+
+          .pf__works-dev {
+            flex: 1;
+
+            .text-work {
+              padding-bottom: 1rem;
+              @include mixin.font(700 '1.6rem');
+
+              span {
+                display: block;
+                padding-top: .4rem;
+                @include mixin.font(#8f8c8c 400 italic '1.4rem');
+              }
+            }
+
+            ul {
+              li {
+                position: relative;
+                padding: .4rem 0 .4rem 1rem;
+                color: var.$color_grey;
+                &::before {
+                  position: absolute;
+                  top: 1rem;
+                  left: 0;
+                  width: .4rem;
+                  height: .4rem;
+                  background-color: var.$color_grey;
+                  border-radius: 100%;
+                  content: '';
+                }
+
+                .text-skill {
+                  display: block;
+                  margin-bottom: .5rem;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//> 경력기술서
+
+//< 프로젝트 상세
+.pf_modal-project {
+  // 프로젝트 별 배경색
+  $works: (
+    memo: (bg: #F1F0EE),
+    sk: (bg: #ffefe3, color: #FF8833),
+    gs: (bg: #D9EBEE, color: #009999),
+    mmon: ( bg: #D6D8DA, color: #303C44, details: 8),
+    nstation: (bg: #D2D2D2, details: 6),
+    hago: (bg: #CBD6D9, color: #013148, details: 4),
+    pf: (bg: #FCF2F3, details: 2),
+    crew: (bg: #3C3C3C, color: var.$color_white),
+    pfscm: (bg: #ADAEB5, color: #33384C),
+    moda: (bg: #FCE1E6),
+    enter: (bg: #E1DCD8, color: #404040),
+    pfmo: (bg: #B5B7BE,  color: #33384C),
+  );
+
+  @each $work, $props in $works {
+    $bg: map-get($props, bg);
+    $fontColor: map-get($props, color);
+    $detailCount: map-get($props, details);
+
+    &.type-#{$work} {
+      .pf__project-head {
+        @if $bg {
+          background-color: $bg;
+        }
+        .text-title {
+          @if $fontColor {
+            color: $fontColor;
+          }
+        }
+
+        .image-work {
+          display: block;
+          width: 100%;
+          max-height: 25rem;
+          aspect-ratio: 16 / 9;
+          @include mixin.background(url("../image/project/work_thumb-#{$work}.png") 'center/contain' no-repeat);
+        }
+      }
+
+      .pf__project-body {
+        .pf__project-detail-list {
+          li {
+            .image-detail {
+              width: 100%;
+              aspect-ratio: 16 / 9;
+              @include mixin.background('center/contain' no-repeat);
+            }
+
+            @if $detailCount {
+              @for $i from 1 through $detailCount {
+                &:nth-child(#{$i}) .image-detail {
+                  background-image: url('../image/project/#{$work}/#{$work}_detail_#{$i}.png');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 프로젝트 헤드
+  .pf__project-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+    border-radius: 1.2rem;
+    @include mixin.respond('tablet-lg') {
+      flex-direction: column-reverse;
+      padding: 0 2rem;
+    }
+
+    // 정보
+    .pf__project-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      padding: 7rem 0 3rem;
+
+      @include mixin.respond('tablet-lg') {
+        padding-top: 0;
+        gap: 2rem;
+      }
+
+      .text-title {
+        padding-bottom: 3rem;
+        @include mixin.font(700 '6rem');
+
+        span {
+          display: block;
+          @include mixin.font(400 '1.8rem');
+        }
+
+        @include mixin.respond('tablet-lg') {
+          font-size: 4rem;
+
+          span {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &-dev {
+        color: var.$color_grey;
+
+        .text-role {
+          margin-bottom: 1.5rem;
+          @include mixin.font(700 '1.6rem');
+          @include mixin.respond('tablet-lg') {
+            font-size: 1.4rem;
+          }
+
+          span {
+            border-bottom: .1rem solid var.$color_grey;
+          }
+        }
+
+        dl {
+          display: flex;
+          align-items: center;
+          margin: 1rem 0;
+          @include mixin.respond('tablet-lg') {
+            margin: .5rem 0;
+          }
+
+          dt {
+            flex: 0 0 8rem;
+            font-weight: 700;
+            @include mixin.respond('tablet-lg') {
+              flex: 0 0 6rem;
+            }
+          }
+
+          dd {
+            flex: 1;
+            @include mixin.respond('tablet-lg') {
+              .text-badge {
+                padding: .3rem .5rem .2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 썸네일
+    .pf__project-thumb {
+      display: flex;
+      align-items: center;
+      flex: 0 0 40rem;
+      width: 100%;
+
+      @include mixin.respond('tablet-lg') {
+        flex: none;
+        margin: 2rem auto;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // 프로젝트 내용
+  .pf__project-body {
+    margin: 3rem 2rem 0;
+    padding-bottom: 3rem;
+    @include mixin.respond('tablet-lg') {
+      margin: 0 1rem;
+    }
+
+    .pf__project-detail {
+      margin-top: 3rem;
+
+      .text-title {
+        padding-bottom: 1rem;
+        @include mixin.font(700 var.$color_grey '2rem');
+      }
+
+      > p {
+        line-height: 2.5rem;
+      }
+
+      > ul {
+        > li {
+          padding: .5rem 0;
+
+          strong {
+            font-weight: 700;
+          }
+
+          > ul {
+            padding-left: 1rem;
+            li {
+              &::before {
+                margin: .7rem .4rem 0 0;
+                width: .3rem;
+                height: .3rem;
+                border-radius: 100%;
+                background-color: var.$color_grey;
+                content: '';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 스타일크루
+  &.type-crew {
+    .pf__project-info-dev {
+      color: var.$color_white;
+
+      .text-role {
+        span {
+          border-bottom-color: var.$color_white;
+        }
+      }
+    }
+  }
+
+  &.type-pf,
+  &.type-pfscm,
+  &.type-moda,
+  &.type-pfmo {
+    .pf__project-head {
+      .text-title strong {
+        color: #BC0919;
+      }
+    }
+  }
+
+  &.type-sk {
+    .pf__project-head {
+      .text-title {
+        strong {
+          color: #EB002C;
+        }
+        span {
+          color: var.$color_grey;
+        }
+      }
+    }
+  }
+}
+//> 프로젝트 상세

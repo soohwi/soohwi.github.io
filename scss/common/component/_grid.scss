@@ -1,0 +1,25 @@
+@charset 'utf-8';
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+@use '../../common/setting/const';
+@use '../../style/setting/var';
+
+:root,
+body {
+    height: 100%;
+    font-size: 62.5%;
+    line-height: 1.285;
+}
+
+:root {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+    font-family: const.$fontFamily_base;
+}
+
+.mode-dark {
+    color: var.$color_white;
+    background-color: var.$color_black;
+}

@@ -1,0 +1,136 @@
+<div class="pf_modal-project type-mmon">
+  <!-- 프로젝트 헤드 -->
+  <div class="pf__project-head">
+    <div class="pf__project-info">
+      <h3 class="text-title">엠몬 솔루션 <span>대형 SI 기반으로 설계된 기업을 위한 전문 솔루션</span></h3>
+      <div class="pf__project-info-dev">
+        <p class="text-role"><span>Project Leader</span></p>
+        <dl>
+          <dt>작업기간</dt>
+          <dd>2022.02 ~ 2023.01 (약 11개월)</dd>
+        </dl>
+        <dl>
+          <dt>기여도</dt>
+          <dd>퍼블리싱 80%</dd>
+        </dl>
+        <dl>
+          <dt>사용언어</dt>
+          <dd>
+            <span class="text-badge">HTML5</span>
+            <span class="text-badge">SCSS</span>
+            <span class="text-badge">Javascript(ES6+)</span>
+            <span class="text-badge">AdobeXD</span>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="pf__project-thumb"><i class="image-work"></i></div>
+  </div>
+  <!-- 프로젝트 헤드 //-->
+
+  <!-- 프로젝트 내용 -->
+  <div class="pf__project-body">
+    <div class="pf__project-detail">
+      <h5 class="text-title">📌 프로젝트 개요</h5>
+      <p>기업 맞춤형 쇼핑몰 구축을 위해 자체 솔루션을 새롭게 개발했습니다.<br>
+        블록 단위로 UI를 구성할 수 있는 구조를 설계하여 쇼핑몰 구축 기간을 3개월 → 7일로 단축시켰으며,
+        개발 생산성과 유지보수 효율성을 크게 향상시킨 프로젝트였습니다.</p>
+    </div>
+    <div class="pf__project-detail">
+      <h5 class="text-title">🛠 주요 역할 및 기여</h5>
+      <ul>
+        <li><strong>UI 설계 및 모듈화:</strong> 웹/모바일/어드민 페이지의 전체 UI 레이아웃을 직접 설계하고, JavaScript 기반 재사용 가능한 컴포넌트로 모듈화하여 효율적인 구조로 구현했습니다.</li>
+        <li><strong>UX 개선을 위한 애니메이션 구현:</strong> CSS Animation을 활용하여 사용자 경험을 높이는 인터랙션을 구현했으며, 불필요한 라이브러리 사용을 최소화했습니다.</li>
+        <li><strong>팀 협업과 품질 관리:</strong> 디자이너·백엔드 개발자와의 정기 미팅 및 요구사항 정리를 통해 UI/UX의 일관성을 확보하고, Git Flow 전략 및 코드 리뷰를 도입해 협업의 안정성과 효율을 높였습니다.</li>
+        <li><strong>웹 표준 및 접근성 준수:</strong> WCAG 2.1 기준을 적용하고 ARIA 속성을 포함한 시맨틱 마크업으로 접근성 검사 100% 통과를 달성했습니다.</li>
+      </ul>
+    </div>
+    <div class="pf__project-detail">
+      <h5 class="text-title">🧩 전체 레이아웃 & UI 구조</h5>
+      <ul class="pf__project-detail-list">
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>Layout: PC/Mobile의 전체 레이아웃과 Header, Footer, Toolbar를 다양한 버전으로 작업하였습니다.</h6>
+            <dl>
+              <dt>Header</dt>
+              <dd>전체적인 구조는 CSS Grid 속성으로 컨테이너를 설정하고 grid-template-columns로 그리드 형태 정의</dd>
+              <dd>Javascript를 사용하여 검색창 상에서 사용자의 키보드 입력을 감지하여 처리하는 이벤트 작업</dd>
+              <dd>gsap를 사용하여 검색창 및 카테고리 열림/닫힘 모션 구현</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <dl>
+              <dt>footer</dt>
+              <dd>footer, address, section 등 시맨틱 태그를 사용</dd>
+              <dd>두 번째 footer에 float 속성을 사용하여 레이아웃 작업 후 부모 요소에 ::after 가상 요소를 생성하여 float 해제</dd>
+              <dd>이미지를 넣을 수 있는 background 속성을 SCSS @mixin으로 정의 후 @include로 사용</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>모바일 layout</h6>
+            <dl>
+              <dt>Header</dt>
+              <dd>같은 태그 구조를 사용하며 다른 디자인이 나올 수 있도록 header에 class를 추가하여 스타일 작업</dd>
+              <dt>footer</dt>
+              <dd>우측 TOP 버튼 position: fixed 속성을 주고 bottom 위치는 calc(toolbar 높이 + 여백)으로 설정하여 toolbar 높이에 영향받지 않도록 작업</dd>
+              <dt>toolbar</dt>
+              <dd>ul 구조로 이루어져 있으며 ul에 CSS flex 속성을 정의하고 li에 flex:1 을 사용하여 디바이스 크기에 따라 유연하게 늘어나거나 줄어듦</dd>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>엠몬솔루션 BLOCK</h6>
+            <span>300개 이상의 PC, MOBILE 블록 제작</span>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>배너형 블록</h6>
+            <span>프로젝트 기획 및 정책 관련 회의 진행을 통해 블록 구조 클래스명 규칙과 퍼블리싱 팀 작업 규칙을 설정하였습니다.</span>
+            <ul>
+              <li>와이드 빅배너 형태 중 Carousel을 이용하여 제작한 블록</li>
+              <li>다양한 디자인의 기본형태 배너 블록</li>
+              <li>띠배너 형태 중 Carousel을 이용하여 제작한 블록</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>상품형 블록</h6>
+            <span>Mobile 블록 관련하여 공통 UI 컴포넌트를 개발 및 표준화하고, 그 외 블록은 개별 작업하였습니다.</span>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>배너형 블록</h6>
+            <ul>
+              <li>PC 와이드 빅배너 형태 중 Carousel을 이용하여 제작한 블록</li>
+              <li>기본 형태와 Carousel 기능의 띠배너 블록</li>
+              <li>PC 와이드 빅배너 형태 중 Carousel을 이용하여 제작한 블록</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <i class="image-detail"></i>
+          <div class="image-info ir-blind">
+            <h6>상품형 블록</h6>
+            <span>PC 블록 관련하여 공통 UI 컴포넌트를 개발 및 표준화하고, 그 외 블록은 개별 작업하였습니다.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 프로젝트 내용 //-->
+</div>

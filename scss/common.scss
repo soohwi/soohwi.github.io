@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+@use 'common/setting/const';
+@use 'common/helper/mixin';
+
+/**
+ * common
+**/
+
+
+//< 셋팅
+@forward 'common/setting/const';
+@forward 'common/setting/reset';
+//> 셋팅
+
+//< 컴포넌트
+@forward 'common/component/grid';
+//> 컴포넌트
+
+//< 헬퍼
+@forward 'common/helper/function';
+@forward 'common/helper/mixin';
+//> 헬퍼

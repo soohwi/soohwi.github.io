@@ -1,0 +1,186 @@
+@charset 'utf-8';
+
+@use 'sass:math';
+@use '../../common/helper/function' as *;
+@use '../../common/helper/mixin';
+@use '../../common/setting/const';
+@use '../../style/setting/var';
+
+/* 헤더 */
+header {
+    position: fixed;
+    z-index: const.$zIndex_header;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 3rem;
+
+    h1 {
+        padding-top: 0.7rem;
+        @include mixin.font(700 '3rem');
+
+        @include mixin.respond('tablet') {
+          font-size: 2.5rem;
+        }
+
+        @include mixin.respond('mobile') {
+          font-size: 2rem;
+        }
+    }
+
+    .btn-menu {
+      display: none;
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+
+      &::before {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: .7rem;
+        height: .7rem;
+        border-radius: 100%;
+        background-color: var.$color_main;
+        content: '';
+      }
+
+      .icon-menu {
+        position: absolute;
+        top: 1rem;
+        left: 2.5rem;
+        width: .7rem;
+        height: .7rem;
+        border-radius: 100%;
+        background-color: var.$color_main;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 1.5rem;
+          left: 0;
+          width: .7rem;
+          height: .7rem;
+          border-radius: 100%;
+          background-color: var.$color_grey_light;
+          content: '';
+        }
+
+        &::after {
+          left: auto;
+          right: 1.5rem;
+          background-color: var.$color_main;
+        }
+      }
+
+      @include mixin.respond('tablet') {
+        display: block;
+      }
+    }
+
+    .pf_header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        min-height: var.$header_height_base;
+        @include mixin.font(var.$color_white '1.7rem');
+        border-radius: 1.2rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        /* -webkit-backdrop-filter: saturate(200%) blur(15px); */
+
+        @include mixin.respond('tablet') {
+          min-height: 6rem;
+        }
+    }
+
+    nav {
+      &:not(.mobile-nav) {
+        @include mixin.respond('tablet') {
+          display: none;
+        }
+        ul {
+            display: flex;
+            gap: 5rem;
+
+            a {
+                display: block;
+                padding: 0 1rem;
+                line-height: 8rem;
+
+                &:hover,
+                &.on {
+                    color: var.$color_main;
+                }
+            }
+
+            &::after {
+                content: none;
+            }
+        }
+      }
+
+      &.mobile-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        padding: 12rem 0 0 4rem;
+        width: 30rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        @include mixin.transition(.6s);
+
+        li {
+          margin-bottom: 1.5rem;
+
+          a {
+            display: block;
+            font-size: 1.8rem;
+
+            &:hover,
+            &.on {
+                color: var.$color_main;
+            }
+          }
+        }
+
+        .btn-close {
+          position: absolute;
+          top: 3rem;
+          right: 3rem;
+          width: 4rem;
+          height: 4rem;
+
+          .icon-close::before {
+            background-color: var.$color_white;
+          }
+        }
+
+        &.on {
+          right: 0;
+        }
+      }
+    }
+}
+
+.pf_cursor {
+    position: fixed;
+    z-index: const.$zIndex_floating;
+    @include mixin.transform(translate(-50%, -50%));
+    pointer-events: none;
+
+    i {
+        display: block;
+        z-index: const.$zIndex_floating;
+        width: 48rem;
+        height: 48rem;
+        filter: blur(8rem);
+        background: var.$color_main;
+        border-radius: 100%;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        @include mixin.opacity(0.1);
+    }
+}
