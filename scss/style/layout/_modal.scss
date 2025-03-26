@@ -449,8 +449,21 @@
       margin-top: 3rem;
 
       .text-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         padding-bottom: 1rem;
         @include mixin.font(700 var.$color_grey '2rem');
+        span {
+          @include mixin.font(400 '1.4rem');
+        }
+        @include mixin.respond('tablet') {
+          display: block;
+          span {
+            display: block;
+            padding-left: 2rem;
+          }
+        }
       }
 
       > p {
