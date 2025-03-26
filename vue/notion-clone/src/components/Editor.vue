@@ -37,6 +37,7 @@
   .editor {
     flex: 1;
     padding: 1.5rem;
+    min-width: 40rem;
   }
 
   textarea {

@@ -18,6 +18,11 @@
   line-height: 1.285;
 }
 
+html,body {
+  overflow: auto;
+  width: 100%;
+}
+
 body {
   color: var(--color-text);
   font-size: 1.4rem;
@@ -35,6 +40,7 @@ body {
 }
 
 #app {
+  overflow: auto;
   margin: 0 auto;
   padding: 2rem;
   max-width: 128rem;
@@ -42,30 +48,3 @@ body {
   font-weight: normal;
   background-color: var(--color-bg);
 }
-
-/* a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-} */
-
-/* @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */
