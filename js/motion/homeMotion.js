@@ -123,26 +123,14 @@ export default function homeMotion() {
       }, 'rotate180+=6');
   };
 
-  // 데스크탑
-  mm.add("(min-width: 1024px)", () => {
-    gsapHomeMotion({
-      xTop: -100,
-      xBottom: 50,
-      xSub: 0,
-      ySub: 70,
-      yLine: 50,
-      xFrontCenter: 0
-    });
-  });
-
-  // 태블릿
-  mm.add("(max-width: 1023px)", () => {
+  // 소형 모바일
+  mm.add("(max-width: 479px)", () => {
     gsapHomeMotion({
       xTop: -50,
       xBottom: 0,
-      xSub: -180,
-      ySub: 70,
-      yLine: 50,
+      xSub: -170,
+      ySub: 40,
+      yLine: 30,
       xFrontCenter: -50
     });
   });
@@ -159,15 +147,27 @@ export default function homeMotion() {
     });
   });
 
-  // 소형 모바일
-  mm.add("(max-width: 479px)", () => {
+  // 태블릿
+  mm.add("(max-width: 1023px)", () => {
     gsapHomeMotion({
       xTop: -50,
       xBottom: 0,
-      xSub: -170,
-      ySub: 40,
-      yLine: 30,
+      xSub: -180,
+      ySub: 70,
+      yLine: 50,
       xFrontCenter: -50
+    });
+  });
+
+  // 데스크탑
+  mm.add("(min-width: 1024px)", () => {
+    gsapHomeMotion({
+      xTop: -100,
+      xBottom: 50,
+      xSub: 0,
+      ySub: 70,
+      yLine: 50,
+      xFrontCenter: 0
     });
   });
 
