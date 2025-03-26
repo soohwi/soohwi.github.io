@@ -288,10 +288,8 @@
           margin-top: 1rem;
         }
 
-        @include mixin.respond('mobile') {
-          p {
-            white-space: normal;
-          }
+        p {
+          white-space: initial;
         }
       }
 
