@@ -40,13 +40,13 @@ export default function workMotion() {
   workIntro
     .from($workTitle, {
       duration: 2,
-      bottom: `50%`,
+      bottom: `26vh`,
       left: `50%`,
       x: `-50%`,
       y: `50%`,
       fontSize: `17vw`,
     })
-    .to($workTitle, { duration: 0.2, opacity: 0 });
+    .to($workTitle, { duration: 0.1, opacity: 0 });
 
   // hover 시 클래스 토글
   $workListItems.forEach((item, idx) => {

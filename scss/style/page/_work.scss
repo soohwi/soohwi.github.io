@@ -10,8 +10,8 @@
 //< work
 .pf_main-work {
   margin: 0 auto;
-  padding: 0 3rem;
-  max-width: var.$minWidth_base;
+  padding: 0 6rem;
+  // max-width: var.$minWidth_base;
   height: auto;
   @include mixin.respond('tablet') {
     padding: 0 1.5rem;
@@ -26,7 +26,7 @@
       display: inline-block;
       position: absolute;
       z-index: 2;
-      bottom: -26.8%;
+      bottom: -26vh;
       left: 0;
       font-size: 7rem;
       font-weight: 600;
