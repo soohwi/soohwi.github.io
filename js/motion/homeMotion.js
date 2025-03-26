@@ -17,7 +17,6 @@ export default function homeMotion() {
         start: "top top",
         end: "90%",
         scrub: 1,
-        markers: true,
       },
     });
 
