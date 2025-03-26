@@ -9,6 +9,7 @@
 //< 뱃지
 .text-badge {
   display: inline-block;
+  margin-bottom: .4rem;
   padding: .3rem 1rem .2rem;
   border-radius: .4rem;
   @include mixin.font(var.$color_sub '1.2rem' center);

@@ -15,6 +15,10 @@ header {
     left: 0;
     padding: 3rem;
 
+    @include mixin.respond('mobile') {
+      padding: 2rem 1.5rem;
+    }
+
     h1 {
         padding-top: 0.7rem;
         @include mixin.font(700 '3rem');

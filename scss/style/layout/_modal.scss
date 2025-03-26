@@ -49,7 +49,7 @@
       .pf_modal-header {
           position: relative;
           margin: 0 3rem;
-          padding: 2rem 0 1.5rem;
+          padding: 2rem 4rem 1.5rem 0;
           // border-bottom: .1rem solid var.$color_grey_lighter;
           @include mixin.respond('tablet-lg') {
             margin: 0 1.5rem;
@@ -98,6 +98,10 @@
     padding: 2rem;
     border-radius: .4rem;
     background-color: var.$color_bg;
+    @include mixin.respond('mobile') {
+      gap: 0 2rem;
+    }
+
     &-img {
       i {
         width: 6.8rem;
@@ -105,6 +109,11 @@
         @include mixin.font('6rem' center);
         border-radius: 100%;
         background-color: #c9cde0;
+        @include mixin.respond('mobile') {
+          width: 5rem;
+          height: 5rem;
+          font-size: 5rem;
+        }
       }
     }
 
@@ -121,6 +130,13 @@
         li {
           display: flex;
           gap: 0 1.6rem;
+          @include mixin.respond('mobile') {
+            display: block;
+            &:first-child {
+              margin-bottom: 1rem;
+            }
+          }
+
           &:not(:first-child) {
             margin-top: .4rem;
           }
@@ -130,10 +146,23 @@
             color: #606da8;
             border-radius: 2rem;
             background-color: #c9cde0;
+            @include mixin.respond('mobile') {
+              min-width: 6rem;
+            }
           }
 
           .text-comp {
             flex: 0 0 11rem;
+            @include mixin.respond('mobile') {
+              display: inline-block;
+            }
+          }
+
+          @include mixin.respond('mobile') {
+            p:not(.text-comp) {
+              margin-left: .5rem;
+              color: #747171;
+            }
           }
         }
       }
@@ -159,6 +188,10 @@
         > li {
           display: flex;
           gap: 0 2rem;
+          @include mixin.respond('mobile') {
+            display: block;
+          }
+
           &:not(:first-child) {
             margin-top: 3rem;
             padding-top: 3rem;
@@ -167,6 +200,12 @@
 
           .pf__works-info {
             flex: 0 0 25rem;
+            @include mixin.respond('tablet') {
+              flex: 0 0 16rem;
+            }
+            @include mixin.respond('mobile') {
+              margin-bottom: 2rem;
+            }
 
             .text-period {
               margin-bottom: 1rem;
@@ -390,7 +429,8 @@
       }
 
       a {
-        display: block;
+        display: flex;
+        align-items: center;
         width: 100%;
         height: 100%;
       }

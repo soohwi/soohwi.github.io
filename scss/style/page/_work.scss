@@ -26,7 +26,7 @@
       display: inline-block;
       position: absolute;
       z-index: 2;
-      bottom: -32.8%;
+      bottom: -26.8%;
       left: 0;
       font-size: 7rem;
       font-weight: 600;
@@ -57,6 +57,9 @@
       z-index: 1;
       height: auto;
       background-color: var.$color_black;
+    }
+    @include mixin.respond('tablet') {
+      padding-top: 9rem;
     }
 
     // work 세부 타이틀
@@ -141,7 +144,7 @@
           &-thumb {
             height: 50%;
 
-            $works: (sk, #ffefe3), (gs, #D9EBEE), (mmon, #D6D8DA), (nstation, #D2D2D2), (hago, #CBD6D9),
+            $works: (memo, #F1F0EE), (sk, #ffefe3), (gs, #D9EBEE), (mmon, #D6D8DA), (nstation, #D2D2D2), (hago, #CBD6D9),
               (pf, #FCF2F3), (crew, #3C3C3C), (pfscm, #ADAEB5), (moda, #FCE1E6), (enter, #E1DCD8), (pfmo, #B5B7BE);
             @each $work, $bg in $works {
               &.type-#{$work} {

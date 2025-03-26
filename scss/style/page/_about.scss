@@ -14,9 +14,13 @@
     overflow: hidden;
     position: sticky;
     top: 0;
-    padding: 12rem 0 0;
-    // padding: 12rem 0;
-    // max-height: 100vh;
+    // padding: 12rem 0 0;
+    padding: 21vh 0 0;
+    height: 100vh;
+
+    @include mixin.respond('mobile') {
+      padding: 9rem 0 0;
+    }
   }
 
   // 타이틀
@@ -32,6 +36,15 @@
     // @include mixin.transform(translateX(-50%));
     @include mixin.respond('tablet') {
       padding: 0 1.5rem;
+    }
+
+    @include mixin.respond('mobile') {
+      .text-title {
+        font-size: 5rem;
+      }
+      .text-sub {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -132,6 +145,7 @@
           dd {
             position: relative;
             padding-left: 1rem;
+            white-space: pre-wrap;
 
             &::before {
               position: absolute;
@@ -170,6 +184,10 @@
       .pf__about-work {
         > li:not(:first-of-type) {
           margin-top: 5rem;
+
+          @include mixin.respond('mobile') {
+            margin-top: 2rem;
+          }
         }
 
         &-head {
@@ -268,6 +286,12 @@
           flex-wrap: wrap;
           gap: .4rem;
           margin-top: 1rem;
+        }
+
+        @include mixin.respond('mobile') {
+          p {
+            white-space: normal;
+          }
         }
       }
 
